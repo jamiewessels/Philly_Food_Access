@@ -1,0 +1,49 @@
+# Galvanize DSI Capstone 1 
+## Jamie Wessels
+### July 16, 2020
+
+### Proposal: Philly Neighborhood Food Access Exploration
+
+This project will explore whether poverty levels impact access to healthy food stores in the city of Philadelphia.  The dataset for this evaluation comes from OpenDataPhilly.org, and the details of the collection methodology can be found in the Technical Appendix.  
+
+1. Dataset: https://www.opendataphilly.org/dataset/showcases/neighborhood-food-retail
+
+1. Technical Appendix:
+http://foodfitphilly.org/wp-content/uploads/2019/08/Technical-Appendix.pdf
+
+Food access data was collected at each unique census GEOID within the Greater Philadlephia area, where the most specific unit was the Block Group (#TODO: add info on what a block group is and how it relates to location). The data collected for each Block Group is shown in the list below: 
+
+* GeoID: census id (unique identifier)
+* Non Residential (Y/N): indicates non-residential areas
+* Total Low Produce Supply Stores
+* Low Produce Supply Stores per 1000 Residents
+* Supermarket Access (Y/N): based on 0.5 mile radius
+* Total Restaurants: within GeoID
+* Percent Poverty: based on US Census data
+* Percent Vehicle Availability
+* Area: of GeoID
+
+A food store is considered a "High Produce Supply Store" if it carries a certain amount of fresh fruits and vegetables (see Technical Appendix for thresholds).  A typical supermarket is an example of a High Produce Supply Store (HPSS). These stores provide access to healthy foods. Low Produce Supply stores carry little to no fresh fruits or vegetables.  A gas station or corner store is an example of a Low Produce Supply Store.
+
+The dataset I will be using has 1336 entries and 17 columns. 
+
+![picture 2](images/a973e7fc88c1c40803dc9272d491cb6b9f052477231da5af9338e1912b56d5bc.png)  
+
+There were 11 null values across all variables relating to produce access and supermarkets. These null values were consistent within their respective rows, indicating the data was not collected at those specific census geoIDs.  There are two additional rows where vehicle availability and poverty information were missing.  These rows add little value to the analysis, as they were mostly null.  Because they accounted for a very small percentage of the sample size, these 13 rows have been excluded from further analysis (TODO: SCREENSHOTS OF THE ROWS WHICH ARE EXCLUDED). 
+
+# Initial Exploration of Data (Quick Glance) - I will delete this in my final report: 
+
+![picture 3](images/9b18895d9ddd70e63f7c1bc2e0f47c83511e4efcf331eff8e90760970b621ede.png)  
+
+
+![picture 8](images/94ee388af10b5cbcf8bccce5246060cb9328af220c67b5c4e54bffe0b6ce38d9.png)  
+
+
+![picture 7](images/91087bcdb50974fdc6409db0c0f593621ba98d2cab85afee838819f1a36d20e7.png)  
+
+
+
+![picture 6](images/882d088e6556c7997e6581ba1d4e763c94186a4320c2fe2d76988d8847caf69c.png)  
+
+
+
