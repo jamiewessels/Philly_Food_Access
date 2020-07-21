@@ -4,7 +4,7 @@ import numpy as np
 import scipy.stats as stats
 
 
-def create_subset(df, col_to_split, conditions, name_dfs_out):
+def create_subset(df, col_to_split, comps_vals, name_dfs_out):
     '''
     
         Takes in a dataframe, a column, and conditions on which to split the dataframe.  
@@ -12,13 +12,17 @@ def create_subset(df, col_to_split, conditions, name_dfs_out):
 
             Parameters:
                     df (dataframe): Pandas dataframe
-                    b (int): Another decimal integer
+                    col_to_split (series): column from dataframe on which you'd like to split
+                    comps_vals (dictionary): 
+                            keys: comparison operators ('equal', 'greater', 'less', 'greater_equal', 'less_equal', 'not_equal')
+                            values (data type of col_to_split): value for comparison
+                    name_dfs_out (array of strings): names of the dataframes to create
 
             Returns:
-                    binary_sum (str): Binary string
-    
-    
+                    Two or more dataframes based on split condition
     '''
+    for k, v in comps_vals:
+
 
 def bootstrap_sampling(array, num_samples, statistic):
     
@@ -67,6 +71,27 @@ def overlay_histograms(ax, arrays, labels, colors, title, bin_size = 30, alpha =
     return None
 
 
+def plot_empirical_data(ax, df, column):
+    '''
+        Plots the cumulative distribution of a sample. 
+
+            Parameters:
+                    ax: axes object (matplotlib.pyplot)
+                    df (pandas dataframe)
+                    column (series): column within dataframe that contains the data
+                    
+            Returns:
+                    A line plot of the sample's cumulative distribution.
+    '''    
+    
+    x = np.arange(df[column].min(), df[column].max()+1)
+    y = ([df[df[column]<=xx][column].sum() for xx in x])/(df[column]).sum()
+    data = np.hstack([x,y]).reshape(-1, len(x))
+    ax.plot(data[0], data[1])
+
+def overlay_plots(ax, dfs, columns, labels, colors, title)
+
+
 def log_likelihood_poisson(data, lam):
     '''
         Calculates the log likelihood for data, assuming a poisson distribution of a specified lambda.
@@ -76,7 +101,7 @@ def log_likelihood_poisson(data, lam):
                     lam (int): rate for poisson distribution
                     
             Returns:
-                    The log likelihood of a poisson distribution with lambda = lam producing the data
+                    The log-likelihood of a poisson distribution with lambda = lam producing the data
     '''
     log_lik = -len(data) * lam
     for datum in data:
