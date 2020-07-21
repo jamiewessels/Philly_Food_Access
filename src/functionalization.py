@@ -15,6 +15,7 @@ def overlay_histograms(ax, arrays, labels, colors, xlabel, title, bin_size = 30,
                         arrays (list of arrays): one or more arrays for the x values of each histogram
                         colors (list of strings): colors for each histogram
                         labels (list of strings): labels for each histogram
+                    xlabel (string): label for x-axis
                     title (string): title for figure 
                     bin_size (int): default is 30
                     alpha (float): set transparency of plots, default is 0.3    
@@ -65,7 +66,7 @@ def overlay_plots(ax, dfs, columns, labels, colors, title):
                     Overlayed cumulative distribution plots on same axes.
     '''
     for df, col, lab, c in zip(dfs, columns, labels, colors):
-        plot_empirical_data(ax, df, column, label = lab, color = c)
+        plot_empirical_data(ax, df, col, label = lab, color = c)
     ax.set_title(title)
     ax.legend
     plt.show()
