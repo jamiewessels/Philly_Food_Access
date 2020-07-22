@@ -1,20 +1,18 @@
-# Philly_Food_Access
+# Philly Neighborhood Food Access Exploration
 Galvanize DSI Capstone #1: An Analysis on Food Access in Philadelphia
 
-# Galvanize DSI Capstone 1 
-## Jamie Wessels
-### July 16, 2020
+## Overview
+This project will explore whether poverty levels impact access to healthy food stores in the city of Philadelphia.  The dataset for this evaluation comes from OpenDataPhilly.org, and the details of the collection methodology can be found in the Technical Appendix.
 
-### Proposal: Philly Neighborhood Food Access Exploration
+## Background 
 
-This project will explore whether poverty levels impact access to healthy food stores in the city of Philadelphia.  The dataset for this evaluation comes from OpenDataPhilly.org, and the details of the collection methodology can be found in the Technical Appendix.  
 
 1. Dataset: https://www.opendataphilly.org/dataset/showcases/neighborhood-food-retail
 
 1. Technical Appendix:
 http://foodfitphilly.org/wp-content/uploads/2019/08/Technical-Appendix.pdf
 
-Food access data was collected at each unique census GEOID within the Greater Philadlephia area, where the most specific unit was the Block Group (#TODO: add info on what a block group is and how it relates to location). The data collected for each Block Group is shown in the list below: 
+Food access data was collected at each unique census GEOID10 within the Greater Philadlephia area, where the most specific unit was the Block Group.  Each Block Group represents a certain number of residents within a geographic location.  The data collected for each Block Group is shown in the list below: 
 
 * GeoID: census id (unique identifier)
 * Non Residential (Y/N): indicates non-residential areas
@@ -22,28 +20,31 @@ Food access data was collected at each unique census GEOID within the Greater Ph
 * Low Produce Supply Stores per 1000 Residents
 * Supermarket Access (Y/N): based on 0.5 mile radius
 * Total Restaurants: within GeoID
-* Percent Poverty: based on US Census data
+* Percent Poverty: percent of residents that fall below the Federal Poverty Line
 * Percent Vehicle Availability
 * Area: of GeoID
 
-A food store is considered a "High Produce Supply Store" if it carries a certain amount of fresh fruits and vegetables (see Technical Appendix for thresholds).  A typical supermarket is an example of a High Produce Supply Store (HPSS). These stores provide access to healthy foods. Low Produce Supply stores carry little to no fresh fruits or vegetables.  A gas station or corner store is an example of a Low Produce Supply Store.
+### Definitions:  
+* **High Produce Supply Store (HPSS)**: Stores that carry a certain amount of fresh fruits and vegetables   
+   * *Ex: typical supermarkets*
+* **Low Produce Supply stores (LPSS)**: stores that carry little to no fresh fruits or vegetables.  
+  * *Ex: gas stations and corner stores* 
 
-## The Questions I'd like to Answer: 
+## Questions to Explore
 
-* Is there a difference in poverty levels between areas that do have access to a supermarket and areas that do not have access to a supermarket? Note: access means within 0.5 miles (assumes walking distance).
+* Is there a difference in poverty levels between areas that have access to a supermarket and areas that do not have access to a supermarket? 
+    * "Access" means there is a supermarket within 0.5 miles walking distance.
 
 * Is there a difference in vehicle availability between areas that have access to supermarkets and those that do not? 
 
-* Is there a correlation between poverty levels and high produce supply stores? Note: the number of stores will be normalized both by area and by population
+* Is there a difference in the number of high produce supply stores based on poverty classification? 
+    * High poverty classified as >20% of the residents falling below the Federal Poverty Line
 
-* Is there a correlation between poverty levels and high produce supply stores? Note: the number of stores will be normalized both by area and by population
+* Is there a difference in the number of low produce supply stores based on poverty classification? 
 
-* Is there a difference in the number of supermarkets based on poverty levels? 
+## Exploratory Data Analysis
 
-* Is there a correlation between the number of restaurants within each geoid unit and poverty percentage. 
-
-## Initial Exploration of the Data
-
+### Initial Exploration: 
 The dataset I will be using has 1336 entries and 17 columns. 
 
 ![Dataframe Info](/images/exp1.jpeg)
