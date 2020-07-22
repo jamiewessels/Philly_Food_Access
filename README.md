@@ -63,7 +63,8 @@ There were 13 null values within the raw dataset, 11 of which corresponded to th
 ![Poverty and Supermarket Access](images/pdfandcdf_pct_pov_by_supermarket.jpeg)
 
 #TODO: talk about how we will further explore this with hypothesis testing
-![Vehicle Availability and Supermarket Access](imagespdfandcdf_pct_vehicle_by_supermarket.jpeg)
+
+![Vehicle Availability and Supermarket Access](images/pdfandcdf_pct_vehicle_by_supermarket.jpeg)
 
 *Poverty Levels and Food Access*
 The dataset was split into two categories: High Poverty and Not High Poverty.  High Poverty areas are those in which greater than 20% of residents fell below the Federal Poverty Line.

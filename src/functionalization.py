@@ -68,7 +68,7 @@ def overlay_plots(ax, dfs, columns, labels, colors, title):
     for df, col, lab, c in zip(dfs, columns, labels, colors):
         plot_empirical_data(ax, df, col, label = lab, color = c)
     ax.set_title(title)
-    ax.legend
+    ax.legend()
     plt.show()
 
 #Statistical Testing, Two Sample T-Test (independent samples)
