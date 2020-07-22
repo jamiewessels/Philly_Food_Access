@@ -34,6 +34,7 @@ Food access data was collected at each unique census GEOID10 within the Greater 
   * *Ex: gas stations and corner stores* 
 * **Percent HPSS**:  HPSS / (HPSS + LPSS)
 
+---
 
 ## Questions to Explore
 
@@ -47,6 +48,8 @@ Food access data was collected at each unique census GEOID10 within the Greater 
 
 1. Is there a difference in the number of low produce supply stores based on poverty classification? 
 
+---
+
 ## Exploratory Data Analysis
 
 ### Initial Exploration: 
@@ -56,38 +59,78 @@ The dataset has 1336 entries and 17 columns.
 **Null Values:**
 There were 13 null values within the raw dataset, 11 of which corresponded to the non-residential areas within Philadelphia. These null values were excluded, as I was interested in the areas with residents.  These records can be found Initial_exploration.ipynb file.  
 
-**Initial Findings and Methodology** 
+---
 
-*Supermarket Access:*
+
+***Supermarket Access:***
 
 ![Poverty and Supermarket Access](images/pdfandcdf_pct_pov_by_supermarket.jpeg)
 
-#TODO: talk about how we will further explore this with hypothesis testing
 
 ![Vehicle Availability and Supermarket Access](images/pdfandcdf_pct_vehicle_by_supermarket.jpeg)
 
-*Poverty Levels and Food Access*
+**Further Exploration: Is there a difference in vehicle access between areas with supermarket access and those without supermarket access?**
+
+*Conclusion: Vehicle availability is higher in areas without supermarket access (with 95% confidence)*
+```
+Difference in Sample Means: 5.16 %
+
+Comparison of Means (Welches two-sample t-test): 
+        * significance level (alpha): 0.05
+        * p-value: 0.0002
+```
+*see appendix for more details on method*
+
+---
+
+***Poverty Levels and Food Access***
 
 The dataset was split into two categories: High Poverty and Not High Poverty.  High Poverty areas are those in which greater than 20% of residents fell below the Federal Poverty Line.
 
 ![Percent HPSS and Poverty Classification](images/pdfandcdf_pct_HPSS_by_poverty.jpeg)
 
-*Modeling Exploration: Total LPSS*
-The data for total number of low produce supply stores was interesting, as it indicated that high poverty areas were likely to have more low produce supply stores (i.e. stores that do not sell fruits and vegetables).  I thought that total LPSS might follow a Poisson distribution, where the unit of space was the Block Group (or the number of residents within that block group).  
+**Further Exploration: Is there a difference in HPSS percentage in High Poverty areas vs. Not High Poverty areas?**
+
+*Conclusion: Areas with poverty levels below 20% have a higher percentage of HPSS stores than areas with poverty levels above 20% (with 95% confidence)*
+```
+Difference in Sample Means: 5.45 %
+
+Comparison of Means (Welches two-sample t-test): 
+        * significance level (alpha): 0.05
+        * p-value: <0.0001
+```
+*see appendix for more details on method*
+
+---
+
+***Modeling Exploration: Total LPSS***
+
+The data for total number of low produce supply stores was interesting, as it indicated that high poverty areas were likely to have more low produce supply stores (i.e. stores that do not sell fruits and vegetables).  I thought that total LPSS might follow a Poisson distribution, where the unit of space was the Census Block Group.  
 
 Maximum Likelihood Approach: 
-* Poisson model should converge on lambda, where lambda can be approximated by the sample means
+* Poisson model to converge on the variable lambda, approximated by the sample mean
+
+    ```
+    * Mean(Total LPSS, High Poverty Areas) = 33.86
+    * Mean(Total LPSS, Not High Poverty Areas) = 24.4
+    ```
 
 ![Total LPSS by Poverty Classification](images/pdf_tot_lpss_by_poverty.jpeg)
 
 ![MLE: Poisson Model](images/Poisson_model_exploration.jpeg)
 
-*What's going on?*
+*So what might be going on?*
 
-It's likely that our samples are not independent and identically distributed.  This is likely due to the fact that different areas in Philadlephia have different demands for low produce supply stores.  
+It's likely that our samples are not independent and identically distributed because each subsection of Philadlephia has its own demands for high and low produce supply stores.  
+
+#TODO ADD TITLE TO HEAT MAP
 
 ![Heat Map Philadelphia - Total LPSS](images/tot_lpss_hmap_philly.jpeg)
 
+
+
+
+# Supporting Information / Appendix
 
 ## Hypothesis Testing
 
