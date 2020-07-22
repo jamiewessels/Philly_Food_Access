@@ -67,10 +67,26 @@ There were 13 null values within the raw dataset, 11 of which corresponded to th
 ![Vehicle Availability and Supermarket Access](images/pdfandcdf_pct_vehicle_by_supermarket.jpeg)
 
 *Poverty Levels and Food Access*
+
 The dataset was split into two categories: High Poverty and Not High Poverty.  High Poverty areas are those in which greater than 20% of residents fell below the Federal Poverty Line.
 
 ![Percent HPSS and Poverty Classification](images/pdfandcdf_pct_HPSS_by_poverty.jpeg)
 
+*Modeling Exploration: Total LPSS*
+The data for total number of low produce supply stores was interesting, as it indicated that high poverty areas were likely to have more low produce supply stores (i.e. stores that do not sell fruits and vegetables).  I thought that total LPSS might follow a Poisson distribution, where the unit of space was the Block Group (or the number of residents within that block group).  
+
+Maximum Likelihood Approach: 
+* Poisson model should converge on lambda, where lambda can be approximated by the sample means
+
+![Total LPSS by Poverty Classification](images/pdf_tot_lpss_by_poverty.jpeg)
+
+![MLE: Poisson Model](images/Poisson_model_exploration.jpeg)
+
+*What's going on?*
+
+It's likely that our samples are not independent and identically distributed.  This is likely due to the fact that different areas in Philadlephia have different demands for low produce supply stores.  
+
+![Heat Map Philadelphia - Total LPSS](images/tot_lpss_hmap_philly.jpeg)
 
 
 ## Hypothesis Testing
