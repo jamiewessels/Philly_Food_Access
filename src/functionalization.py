@@ -118,24 +118,43 @@ def mle_poisson(data, lams):
     idx = np.argmax(log_liks)
     return lams[idx]
 
-def bootstrap_sampling(array, num_samples, statistic):
+def paired_bootstrap_sampling(sample1, sample2, num_samples, statistic):
     
     '''
-        Takes in an array and creates a number of bootstrap samples (num_samples), with replacement, all of length len(array). 
+        Takes in two arrays and creates a number of bootstrap samples (num_samples), with replacement, 
+        all of length len(array). 
         Returns an array of the bootstrap samples.
 
             Parameters:
-                    array (array): list or series
+                    sample1 (array): first sample for comparison
+                    sample1 (array): second sample for comparison
                     num_samples (int): number of boostrap samples
-                    statistic (str): aggregate statistic (i.e. np.mean) to perform on each bootstrap sample
+                    statistic (str): aggregate statistic (i.e. np.median) to perform on each bootstrap sample
 
             Returns:
-                    array (array): bootstrap samples
+                    array (array): differences in median for each boostrap samples
     '''
     bootstraps = []
 
     for n in range(num_samples):
-        samp = np.random.choice(array, len(array), replace = True)
-        bootstraps.append(statistic(samp))
+        samp1 = np.random.choice(sample1, len(sample1), replace = True)
+        samp2 = np.random.choice(sample2, len(sample2), replace = True)
+        bootstraps.append(statistic(samp1) - statistic(samp2))
         
     return bootstraps
+
+def plot_bs_sample_diffs(ax, sample1, sample2, num_samples, statistic, conf, title, xlabel, alpha = 0.5):
+    
+    diffs = paired_bootstrap_sampling(sample1, sample2, num_samples, statistic)
+    sorted_diffs = sorted(diffs)
+    
+    ci_lower_limit = sorted_diffs[int(num_samples * (1-conf)/2)]
+    ci_upper_limit = sorted_diffs[int(num_samples * ((1-conf)/2 +conf))]
+    
+    ax.hist(diffs, density = True, bins = 20, alpha = alpha)
+    ax.axvline(x = ci_lower_limit, linestyle = 'dashed', color = 'blue', label = 'CI Lower')
+    ax.axvline(x = ci_upper_limit, linestyle = 'dashed', color = 'green', label = 'CI Upper')
+    ax.set_xlabel(xlabel)
+    ax.set_title(title)
+    ax.set_ylabel('Density')
+    ax.legend()
