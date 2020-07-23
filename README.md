@@ -155,8 +155,9 @@ No Supermarket Access  |72.09 |20.50| 272|
 Table 2: HPSS Proportion (%) by Poverty Classification
 |Group   | Mean | Median  | Standard Deviation | n |
 |--------|------|---------|--------------------|---|
-High Poverty | 3.39 | 2.68 | 3.20| 739|
-Not High Poverty| 4.26 | 2.36 | 6.02 | 584|
+High Poverty | 9.41 | 7.90| 6.84 | 739|
+Not High Poverty| 14.87 |  12.5 | 11.53 | 584|
+
 
 ### Hypothesis Testing
 
