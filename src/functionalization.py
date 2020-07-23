@@ -69,7 +69,7 @@ def overlay_plots(ax, dfs, columns, labels, colors, title):
         plot_empirical_data(ax, df, col, label = lab, color = c)
     ax.set_title(title)
     ax.legend()
-    plt.show()
+    # plt.show()
 
 #Statistical Testing, Two Sample T-Test (independent samples)
 
@@ -150,6 +150,7 @@ def plot_bs_sample_diffs(ax, sample1, sample2, num_samples, statistic, conf, tit
     
     ci_lower_limit = sorted_diffs[int(num_samples * (1-conf)/2)]
     ci_upper_limit = sorted_diffs[int(num_samples * ((1-conf)/2 +conf))]
+    print(f'lower CI: {ci_lower_limit}, upper CI: {ci_upper_limit}')
     
     ax.hist(diffs, density = True, bins = 20, alpha = alpha)
     ax.axvline(x = ci_lower_limit, linestyle = 'dashed', color = 'blue', label = 'CI Lower')
@@ -158,3 +159,4 @@ def plot_bs_sample_diffs(ax, sample1, sample2, num_samples, statistic, conf, tit
     ax.set_title(title)
     ax.set_ylabel('Density')
     ax.legend()
+    
