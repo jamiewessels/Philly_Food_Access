@@ -89,7 +89,7 @@ Methodology: Comparison of Means
 **Conclusion**: Vehicle availability appears to be **higher** in areas **without supermarket access**.  We are 95% confident that the difference in mean vehicle availability is between 2.51% and 7.85%. 
 
 <p align="center">
-    <img src="images/Veh_avail_supermarkets_compare_means.jpeg" width='600'/>
+    <img src="images/Veh_avail_supermarkets_compare_means.jpeg" width='450'/>
 </p>
 
 ---
@@ -115,7 +115,7 @@ Methodology: Comparison of Medians
 
 
 <p align="center">
-    <img src="images/Percent_HPSS_compare_medians.jpeg" width='600'/>
+    <img src="images/Percent_HPSS_compare_medians.jpeg" width='450'/>
 </p>
 
 ---
@@ -125,9 +125,21 @@ Methodology: Comparison of Medians
 
 ### Supporting Code
 /src/hypo_testing_supermarket.py
+
 /src/hypo_testing_pct_hpss_by_poverty.py
+
 /src/functionalization.py
+
 /notebooks/Exploratory_Data_Analysis.ipynb
+
+
+### Sources
+  
+  1. Dataset: https://www.opendataphilly.org/dataset/showcases/neighborhood-food-retail
+
+  1. Technical Appendix: http://foodfitphilly.org/wp-content/uploads/2019/08/Technical-Appendix.pdf
+
+
 
 ### Summary Statistics
 
@@ -191,8 +203,4 @@ Not High Poverty| 14.87 |  12.5 | 11.53 | 584|
 
     >Calculated 95% confidence intervals as the 2.5 and 97.5 percentiles of the mean differences
     
-  ###Sources
   
-  1. Dataset: https://www.opendataphilly.org/dataset/showcases/neighborhood-food-retail
-
-  1. Technical Appendix: http://foodfitphilly.org/wp-content/uploads/2019/08/Technical-Appendix.pdf
