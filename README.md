@@ -145,20 +145,18 @@ Methodology: Comparison of Medians
 
 ### Summary Statistics
 
-Table 1: Vehicle Availability (%)
-|Group   | Mean | Median  | Variance | Standard Deviation | n |
-|--------|------|---------|----------|--------------------|---|
-High Poverty | 
-Low Poverty  |
+Table 1: Vehicle Availability (%) by Supermarket Access
+|Group   | Mean | Standard Deviation | n |
+|--------|------|--------------------|---|
+Supermarket Access | 66.94 |19.76| 1051|
+No Supermarket Access  |72.09 |20.50| 272|
 
 
-Table 2: HPSS Proportion (%)
-|Group   | Mean | Median  | Variance | Standard Deviation | n |
-|--------|------|---------|----------|--------------------|---|
-High Poverty | 
-Low Poverty  |
-
-
+Table 2: HPSS Proportion (%) by Poverty Classification
+|Group   | Mean | Median  | Standard Deviation | n |
+|--------|------|---------|--------------------|---|
+High Poverty | 3.39 | 2.68 | 3.20| 739|
+Not High Poverty| 4.26 | 2.36 | 6.02 | 584|
 
 ### Hypothesis Testing
 
