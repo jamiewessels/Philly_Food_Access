@@ -1,24 +1,25 @@
 # Philly Neighborhood Food Access Exploration
-Galvanize DSI Capstone #1: An Analysis on Food Access in Philadelphia
+An Analysis on Food Access in Philadelphia
 
 ## Overview
-This project will explore whether poverty levels impact access to healthy food stores in the city of Philadelphia.  The dataset for this evaluation comes from OpenDataPhilly.org, and the details of the collection methodology can be found in the Technical Appendix.
-
-## Background 
-
+This project will explore whether there are any relationships between food access in Philadelphia and socioeconomic factors such as poverty level and vehicle availability. The dataset used in this evaluation comes from OpenDataPhilly.org (link below).
 
 1. Dataset: https://www.opendataphilly.org/dataset/showcases/neighborhood-food-retail
 
 1. Technical Appendix:
 http://foodfitphilly.org/wp-content/uploads/2019/08/Technical-Appendix.pdf
 
-Food access data was collected at each unique census GEOID12 within the Greater Philadlephia area, where the most specific unit was the Block Group.  Each Block Group represents a certain number of residents within a geographic location.  The most attributes I chose to focus my analysis are listed below:
+## Background 
+
+The data was collected for each unique Census Block Group within Philadelphia. Each Block Group represents a certain number of residents within a geographic location.  
+
+The main attributes on which I focused my analysis are listed below:
 
 * Total Number of Low Produce Supply Stores
 * Total Number of High Produce Supply Stores
 * Percent High Produce Supply Stores
 * Supermarket Access (Y/N): based on 0.5 mile radius
-* Percent Poverty: percent of residents that fall below the Federal Poverty Line
+* Percent Poverty: percent of residents that fall below the Federal Poverty Line at the time of collection
 * Percent Vehicle Availability
 
 ### Definitions:  
@@ -32,16 +33,15 @@ Food access data was collected at each unique census GEOID12 within the Greater 
 ---
 
 ## Questions to Explore
+#TODO: should I delete questions I didn't end up exploring? 
+1. Is there a difference in poverty level between areas that have access to a supermarket and areas that do not have access to a supermarket? 
 
-1. Is there a difference in mean poverty level between areas that have access to a supermarket and areas that do not have access to a supermarket? 
-    * "Access" = there is a supermarket within 0.5 miles walking distance
+1. Is there a difference in vehicle availability between areas that have access to supermarkets and those that do not?
 
-1. Is there a difference in the mean vehicle availability between areas that have access to supermarkets and those that do not?
+1. Is there a difference in the percentage of high produce supply stores based on poverty classification? 
 
-1. Is there a difference in the mean number of high produce supply stores based on poverty classification? 
-    * High poverty: >20% of the residents' incomes fall below the Federal Poverty Line
 
-1. Is there a difference in the mean number of low produce supply stores based on poverty classification? 
+1. Is there a difference in the number of low produce supply stores based on poverty classification? 
 
 ---
 
@@ -49,14 +49,14 @@ Food access data was collected at each unique census GEOID12 within the Greater 
 
 ### Initial Exploration: 
 
-The dataset has 1336 entries and 17 columns.
+The raw dataset had 1336 entries and 17 columns.
 
 **Null Values:**
 There were 13 null values within the raw dataset, 11 of which corresponded to the non-residential areas within Philadelphia. These null values were excluded, as I was interested in the areas with residents. 
 
 **Initial Visualizations**
 
-I intially spent a lot of time visualizing the data through scatterplot matrices, overlaid histograms, and cumulative distributions before diving into any analysis.
+I intially spent a lot of time visualizing the data through scatterplot matrices, overlaid histograms, and cumulative distributions.
 
 The data for total number of low produce supply stores by poverty classification was interesting, as it indicated that high poverty areas could be more likely to have more low produce supply stores (i.e. stores that do not sell fruits and vegetables).  
 
@@ -64,10 +64,10 @@ The data for total number of low produce supply stores by poverty classification
 
 ***Modeling Exploration: Total LPSS***
 
-I thought that total LPSS might follow a Poisson distribution, where the unit of space was the Census Block Group and each "event" was the presence of an LPSS.   
+I thought that total LPSS might follow a Poisson distribution, where the unit of space was the Census Block Group and each "event" was the presence of an LPSS. 
 
 Maximum Likelihood Approach: 
-* Poisson model to converge on the variable lambda, approximated by the sample mean
+* Poisson model to converge on the variable lambda, approximated by the sample means
 
     ```
     * Mean(High Poverty Areas) = 33.86
@@ -80,7 +80,7 @@ The figure below clearly shows that the data were not generated by a Poisson dis
 
 *So what might be going on?*
 
-It's likely that our samples are not independent and identically distributed because each subsection of Philadlephia has its own demands for high and low produce supply stores.  
+It's likely that our Block Groups are not independent and identically distributed with respect to LPSS; it's more likely that each subsection of Philadlephia has specific demands for the food retail scene. It is interesting that the three areas with the highest number of low produce supply stores are those which likely draw the most non-residents (students and commuters).
 
 #TODO ADD TITLE TO HEAT MAP AND LEGEND
 
@@ -89,7 +89,7 @@ It's likely that our samples are not independent and identically distributed bec
 
 ---
 
-### ***Analysis of Supermarket Access and Vehicle Availability***
+### ***Analysis: Supermarket Access and Vehicle Availability***
 
 ![Vehicle Availability and Supermarket Access](images/pdfandcdf_pct_vehicle_by_supermarket.jpeg)
 
@@ -121,7 +121,7 @@ Methodology: comparison of medians
 * Compared medians instead of means due to presence of several outliers (right-skewed)
 * Relied on boostrapping because distributions were not normal
 * For each bootstrap sample, I plotted the difference in medians (high poverty - not high poverty)
-* Calculated the 95% confidents interval for the difference in medians (see dashed lines at the 2.5 and 97.5 percentiles)
+* Calculated the 95% confidence interval for the difference in medians (see dashed lines at the 2.5 and 97.5 percentiles)
 
 *Conclusion: Areas with poverty levels above 20% have a lower percentage of HPSS stores than areas with poverty levels above 20% (with 95% confidence)*
 
