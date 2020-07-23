@@ -4,6 +4,7 @@ import numpy as np
 import scipy.stats as stats
 from functionalization import *
 
+#Note: information on functions used can be found in functionalization.py
 
 ####Import Data, Split by Poverty Classification####
 raw = pd.read_csv('../data/food_retail_cleaned.csv')
@@ -32,7 +33,6 @@ ax[1].set_ylabel('Cumulative Density')
 
 
 #####HYPOTHESIS TESTING: Median Percent HPSS by Poverty Classification#####
-#How to interpret: 
 
 fig, ax = plt.subplots(figsize = (10, 10))
 num_bs_samps = 5000

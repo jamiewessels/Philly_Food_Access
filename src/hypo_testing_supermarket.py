@@ -4,6 +4,9 @@ import numpy as np
 import scipy.stats as stats
 from functionalization import *
 
+#Note: information on functions used can be found in functionalization.py
+
+####Import Data, Split by Supermarket Access####
 raw = pd.read_csv('../data/food_retail_cleaned.csv')
 sprmkt_access, no_sprmkt_access = raw[raw['sprmkt_access']=='Yes'], raw[raw['sprmkt_access']=='No']
 
@@ -32,8 +35,6 @@ fig.tight_layout()
 
 
 #####HYPOTHESIS TESTING: Mean Vehicle Availability by Supermarket Access (PDF and CDF)#####
-#How to interpret: 
-
 fig, ax = plt.subplots(figsize = (10, 10))
 num_bs_samps = 5000
 conf_level = 0.95

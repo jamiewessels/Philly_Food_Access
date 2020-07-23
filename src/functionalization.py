@@ -9,10 +9,9 @@ def overlay_histograms(ax, arrays, labels, colors, xlabel, title, bin_size = 30,
 
             Parameters:
                     ax: axes object (matplotlib.pyplot)
-                    *note: arrays, colors, and labels will be parallel lists
-                        arrays (list of arrays): one or more arrays for the x values of each histogram
-                        colors (list of strings): colors for each histogram
-                        labels (list of strings): labels for each histogram
+                    arrays (list of arrays): one or more arrays for the x values of each histogram
+                    colors (list of strings): colors for each histogram
+                    labels (list of strings): labels for each histogram
                     xlabel (string): label for x-axis
                     title (string): title for figure 
                     bin_size (int): default is 30
@@ -27,17 +26,16 @@ def overlay_histograms(ax, arrays, labels, colors, xlabel, title, bin_size = 30,
     ax.set_title(title)
     ax.set_xlabel(xlabel)
     ax.legend()
-    return None
 
 
 def plot_empirical_data(ax, df, column, label = None, color = 'blue'):
     '''
-        Plots the cumulative distribution of a sample. 
+        Plots the approximate cumulative distribution of a sample. 
 
             Parameters:
                     ax: axes object (matplotlib.pyplot)
                     df (pandas dataframe)
-                    column (series): column within dataframe that contains the data
+                    column (string): column name within dataframe that contains the data
                     label (string): label for plot
             Returns:
                     A line plot of the sample's cumulative distribution.
@@ -54,11 +52,10 @@ def overlay_plots(ax, dfs, columns, labels, colors, title):
 
             Parameters:
                     ax: axes object (matplotlib.pyplot)
-                    *note: arrays, colors, and labels should be parallel lists
-                        dfs (list of dataframes): where data to be plotted lives
-                        columns (list of column names): data from each df to plot
-                        colors (array of strings): colors for each plot
-                        labels (array of strings): labels for each plot
+                    dfs (list of strings): strings are the dataframe names
+                    columns (list of strings): strings are the column names from each dataframe
+                    colors (array of strings): colors for each plot
+                    labels (array of strings): labels for each plot
                     title (string): title for figure   
             Returns:
                     Overlayed cumulative distribution plots on same axes.
@@ -73,9 +70,9 @@ def overlay_plots(ax, dfs, columns, labels, colors, title):
 def paired_bootstrap_sampling(sample1, sample2, num_samples, statistic):
     
     '''
-        Takes in two arrays and creates a number of bootstrap samples (num_samples), with replacement, 
-        all of length len(array). 
-        Returns an array of the bootstrap samples.
+        Takes in two arrays and creates a number (=num_samples) of bootstrap samples.
+        Each bootstrap sample is aggregated on the statistic parameter.
+        The differences of each sample's aggregates are calculated and added to the output list.
 
             Parameters:
                     sample1 (array): first sample for comparison
@@ -84,7 +81,7 @@ def paired_bootstrap_sampling(sample1, sample2, num_samples, statistic):
                     statistic (str): aggregate statistic (i.e. np.median) to perform on each bootstrap sample
 
             Returns:
-                    array (array): differences in median for each boostrap samples
+                    array (array): differences in statistic for each boostrap samples, length = num_samples
     '''
     bootstraps = []
 
@@ -96,7 +93,26 @@ def paired_bootstrap_sampling(sample1, sample2, num_samples, statistic):
     return bootstraps
 
 def plot_bs_sample_diffs(ax, sample1, sample2, num_samples, statistic, conf, title, xlabel, alpha = 0.5):
-    
+
+    '''
+            Plots a histogram of the output of function "paired_boostrap_sampling".
+            Calculates a confidence interval based on percentiles.
+
+            Parameters:
+                    ax: axes object (matplotlib.pyplot)
+                    sample1 (array): first sample for comparison
+                    sample1 (array): second sample for comparison
+                    num_samples (int): number of boostrap samples
+                    statistic (str): aggregate statistic (i.e. np.median) to perform on each bootstrap sample
+                    conf (float): confidence interval (i.e. 0.95 for 95%)
+                    title (string): figure title
+                    xlabel (string): x-axis label
+                    alpha (float): set transparency of plots, default is 0.3    
+
+            Returns:
+                    plot of the output from function "paired_boostrap_sampling"
+                    confidence intervals for the difference in the statistic between the two samples
+    '''
     diffs = paired_bootstrap_sampling(sample1, sample2, num_samples, statistic)
     sorted_diffs = sorted(diffs)
     
