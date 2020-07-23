@@ -1,17 +1,10 @@
 # Philly Neighborhood Food Access Exploration
-An Analysis on Food Access in Philadelphia
 
-## Overview
-This project will explore whether there are any relationships between food access in Philadelphia and socioeconomic factors such as poverty level and vehicle availability. The dataset used in this evaluation comes from OpenDataPhilly.org (link below).
+This project will explore whether there are any relationships between food access in Philadelphia and socioeconomic factors such as poverty level and vehicle availability. The dataset used in this evaluation comes from OpenDataPhilly.org.
 
-1. Dataset: https://www.opendataphilly.org/dataset/showcases/neighborhood-food-retail
+## About the Dataset
 
-1. Technical Appendix:
-http://foodfitphilly.org/wp-content/uploads/2019/08/Technical-Appendix.pdf
-
-## Background 
-
-The data was collected for each unique Census Block Group within Philadelphia. Each Block Group represents a certain number of residents within a geographic location.  
+Food retail data was collected for unique Census Block Groups within Philadelphia. Each Block Group represents a certain number of residents within a geographic location.  
 
 The main attributes on which I focused my analysis are listed below:
 
@@ -22,9 +15,9 @@ The main attributes on which I focused my analysis are listed below:
 * Vehicle Availability
 
 ### Definitions:  
-* **High Produce Supply Store (HPSS)**: Stores that carry a certain amount of fresh fruits and vegetables   
+* **High Produce Supply Stores (HPSS)**: Stores that carry a certain amount of fresh fruits and vegetables   
    * *Ex: typical supermarkets*
-* **Low Produce Supply stores (LPSS)**: stores that carry little to no fresh fruits or vegetables.  
+* **Low Produce Supply Stores (LPSS)**: stores that carry little to no fresh fruits or vegetables.  
   * *Ex: gas stations and corner stores* 
 * **Percent HPSS**:  HPSS / (HPSS + LPSS)
 
@@ -84,8 +77,6 @@ It's likely that our Block Groups are not identically distributed with respect t
 
 ### **Analysis 1:** Supermarket Access and Vehicle Availability
 
-Initial Visualization:
-
 <p align="center">
     <img src="images/pdfandcdf_pct_vehicle_by_supermarket.jpeg" width='450'/>
 </p>
@@ -110,9 +101,6 @@ Methodology: comparison of means
 ### **Analysis 2:** Poverty Levels and Food Access
 
 The dataset was split into two categories: High Poverty and Not High Poverty.  High Poverty areas are those in which greater than 20% of residents fell below the Federal Poverty Line.
-
-
-Initial Visualization:
 
 <p align="center">
     <img src="images/pdfandcdf_pct_HPSS_by_poverty.jpeg" width='450'/>
@@ -204,4 +192,9 @@ Not High Poverty| 14.87 |  12.5 | 11.53 | 584|
     >Calculated the median of each bootstrap sample and then the difference in means between each group
 
     >Calculated 95% confidence intervals as the 2.5 and 97.5 percentiles of the mean differences
+    
+  ###Sources
   
+  1. Dataset: https://www.opendataphilly.org/dataset/showcases/neighborhood-food-retail
+
+  1. Technical Appendix: http://foodfitphilly.org/wp-content/uploads/2019/08/Technical-Appendix.pdf
