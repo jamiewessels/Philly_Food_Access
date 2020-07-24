@@ -23,9 +23,9 @@ def overlay_histograms(ax, arrays, labels, colors, xlabel, title, bin_size = 30,
     for arr, lab, col in zip(arrays, labels, colors):
         ax.hist(arr, label = lab, color = col, bins = bin_size, alpha = alpha, density = density)
     
-    ax.set_title(title)
-    ax.set_xlabel(xlabel)
-    ax.legend()
+    ax.set_title(title, fontsize = 15)
+    ax.set_xlabel(xlabel, fontsize = 12)
+    ax.legend(fontsize = 12)
 
 
 def plot_empirical_data(ax, df, column, label = None, color = 'blue'):
@@ -62,8 +62,8 @@ def overlay_plots(ax, dfs, columns, labels, colors, title):
     '''
     for df, col, lab, c in zip(dfs, columns, labels, colors):
         plot_empirical_data(ax, df, col, label = lab, color = c)
-    ax.set_title(title)
-    ax.legend()
+    ax.set_title(title, fontsize = 15)
+    ax.legend(fontsize = 12)
     # plt.show()
 
 
@@ -123,10 +123,10 @@ def plot_bs_sample_diffs(ax, sample1, sample2, num_samples, statistic, conf, tit
     ax.hist(diffs, density = True, bins = 20, alpha = alpha)
     ax.axvline(x = ci_lower_limit, linestyle = 'dashed', color = 'blue', label = f'CI Lower: {ci_lower_limit.round(3)}')
     ax.axvline(x = ci_upper_limit, linestyle = 'dashed', color = 'green', label = f'CI Upper: {ci_upper_limit.round(3)}')
-    ax.set_xlabel(xlabel)
-    ax.set_title(title)
-    ax.set_ylabel('Density')
-    ax.legend()
+    ax.set_xlabel(xlabel, fontsize = 12)
+    ax.set_title(title, fontsize = 15)
+    ax.set_ylabel('Density', fontsize = 12)
+    ax.legend(fontsize = 12)
     
 
 #MLE For Poisson Distribution

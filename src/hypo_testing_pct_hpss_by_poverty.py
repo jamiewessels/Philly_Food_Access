@@ -18,7 +18,7 @@ labels = ['High Poverty', 'Not High Poverty']
 colors = ['red', 'blue']
 
 overlay_histograms(ax[0], data, labels, colors, xlabel = 'Percent HPSS', title = 'Percent HPSS by Poverty Classification')
-ax[0].set_ylabel('Density')
+ax[0].set_ylabel('Density', fontsize = 12)
 
 dfs_c = [high_pov, not_high_pov]
 columns_c = ['pct_hpss', 'pct_hpss']
@@ -26,10 +26,10 @@ labels_c = ['High Poverty', 'Not High Poverty']
 
 overlay_plots(ax[1], dfs_c, columns_c, labels_c, colors, 'CDF: Percent HPSS by Poverty Classification')
 ax[1].set_xlabel('Percent HPSS')
-ax[1].set_ylabel('Cumulative Density')
+ax[1].set_ylabel('Cumulative Density', fontsize = 12)
 
 # fig.savefig('../images/pdfandcdf_pct_HPSS_by_poverty.jpeg', pad_inches = 0)
-# plt.show()
+plt.show()
 
 
 #####HYPOTHESIS TESTING: Median Percent HPSS by Poverty Classification#####
@@ -40,4 +40,4 @@ conf_level = 0.95
 plot_bs_sample_diffs(ax, high_pov['pct_hpss'], not_high_pov['pct_hpss'], num_bs_samps, np.median, conf_level, 'Comparison of Median %HPSS based on Poverty Classification', 'Difference in Bootstrap Sample Medians: \n Sample1: High Poverty Areas (> 20%) | Sample 2: Not High Poverty Areas (< 20%)')
 fig.tight_layout()
 # fig.savefig('../images/Percent_HPSS_compare_medians.jpeg')
-# plt.show()
+plt.show()
