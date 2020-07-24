@@ -71,7 +71,7 @@ In further exploration, I thought that total LPSS might follow a Poisson distrib
 
 **Potential Explanations**
 
-It's likely that our Block Groups are not identically distributed with respect to LPSS; it's more likely that each subsection of Philadlephia has specific demands for the food retail scene. It is interesting that the three areas with the highest number of low produce supply stores are those which likely draw the most non-residents (students and commuters).
+It's likely that our Block Groups are not independent and identically distributed with respect to LPSS; it's more likely that each subsection of Philadlephia has specific demands for the food retail scene. It is interesting that the three areas with the highest number of low produce supply stores are those which likely draw the most non-residents (students and commuters).
 
 ![Heat Map Philadelphia - Total LPSS](images/tot_lpss_hmap_philly.png)
 
