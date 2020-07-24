@@ -124,7 +124,6 @@ Methodology: Comparison of Medians
     <img src="images/Percent_HPSS_compare_medians.jpeg" width='450'/>
 </p>
 
----
 
 ---
 ## Supporting Information / Appendix

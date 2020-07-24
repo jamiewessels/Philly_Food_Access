@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.stats as stats
 from functionalization import *
+plt.rcParams.update({'font.size': 16})
 
 #Note: information on functions used can be found in functionalization.py
 
@@ -34,12 +35,10 @@ plt.show()
 
 #####HYPOTHESIS TESTING: Median Percent HPSS by Poverty Classification#####
 
-fig, ax = plt.subplots(figsize = (10, 10))
+fig, ax = plt.subplots(figsize = (8, 8))
 num_bs_samps = 5000
 conf_level = 0.95
 plot_bs_sample_diffs(ax, high_pov['pct_hpss'], not_high_pov['pct_hpss'], num_bs_samps, np.median, conf_level, 'Comparison of Median %HPSS based on Poverty Classification', 'Difference in Bootstrap Sample Medians: \n Sample1: High Poverty Areas (> 20%) | Sample 2: Not High Poverty Areas (< 20%)')
-ax.set_xlabel('Difference in Bootstrap Sample Medians: \n Sample1: High Poverty Areas (> 20%) | Sample 2: Not High Poverty Areas (< 20%)', fontsize = 12)
-ax.set_ylabel('Density', fontsize = 14)
 fig.tight_layout()
 # fig.savefig('../images/Percent_HPSS_compare_medians.jpeg')
 plt.show()
