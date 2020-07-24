@@ -40,13 +40,15 @@ The raw dataset had 1336 entries and 17 columns.
 **Null Values:**
 There were 13 null values within the raw dataset, 11 of which corresponded to the non-residential areas within Philadelphia. These null values were excluded, as I was interested in the areas with residents. 
 
-### **Initial Exploration: Total LPSS**
+### **Initial Exploration: Total Low Produce Supply Stores (LPSS)**
 
 When exploring the data, I quickly became interested in the relationship between poverty levels and the number of low produce supply stores.  It appeared that higher poverty areas could be more likely to have a greater number of low produce supply stores (i.e. corner stores, gas stations).  
 
 <p align="center">
     <img src="images/scatter_tot_lpss.jpeg" width='450'/>
 </p>
+
+
 
 <p align="center">
     <img src="images/pdf_tot_lpss_by_poverty.jpeg" width='450'/>
@@ -60,10 +62,6 @@ In further exploration, I thought that total LPSS might follow a Poisson distrib
     * Mean(High Poverty Areas) = 33.9 lpss
     * Mean(Not High Poverty Areas) = 24.4 lpss
    
-
-<p align="center">
-    <img src="images/poisson_modeling_lpss_sidebyside.jpeg" width='600'/>
-</p>
 
 <p align="center">
     <img src="images/poisson_cdfs.jpeg" width='450'/>
