@@ -115,7 +115,7 @@ Methodology: Comparison of Medians
 * Relied on boostrapping in order to create a normal distribution of the differences in medians (high poverty - not high poverty)
 * Calculated the 95% confidence interval for the difference in medians using the 2.5 and 97.5 percentiles of the distribution of the median differences
 
-**Conclusion:** Areas with **poverty levels above 20%** appear to have a **lower percentage of HPSS stores** than areas with poverty levels above 20%.  We are 95% confident that the percentage of HPSS in high poverty areas is between 3.64% and 6.35% lower than non-high poverty areas. 
+**Conclusion:** Areas with **poverty levels above 20%** appear to have a **lower percentage of HPSS stores** than areas with poverty levels below 20%.  We are 95% confident that the percentage of HPSS in high poverty areas is between 3.64% and 6.35% lower than non-high poverty areas. 
 
 
 <p align="center">
