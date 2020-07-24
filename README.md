@@ -42,7 +42,11 @@ There were 13 null values within the raw dataset, 11 of which corresponded to th
 
 ### **Initial Exploration: Total LPSS**
 
-The data for total number of low produce supply stores by poverty classification indicated that high poverty areas may be more likely to have a greater number of low produce supply stores (i.e. corner stores, gas stations).  
+When exploring the data, I quickly became interested in the relationship between poverty levels and the number of low produce supply stores.  It appeared that higher poverty areas could be more likely to have a greater number of low produce supply stores (i.e. corner stores, gas stations).  
+
+<p align="center">
+    <img src="images/scatter_tot_lpss.jpeg" width='450'/>
+</p>
 
 <p align="center">
     <img src="images/pdf_tot_lpss_by_poverty.jpeg" width='450'/>
@@ -58,7 +62,11 @@ In further exploration, I thought that total LPSS might follow a Poisson distrib
    
 
 <p align="center">
-    <img src="images/Poisson_model_exploration.jpeg" width='450'/>
+    <img src="images/poisson_modeling_lpss_sidebyside.jpeg" width='600'/>
+</p>
+
+<p align="center">
+    <img src="images/poisson_cdfs.jpeg" width='450'/>
 </p>
 
 **Potential Explanations**
