@@ -45,7 +45,7 @@ There were 13 null values within the raw dataset, 11 of which corresponded to th
 When exploring the data, I quickly became interested in the relationship between poverty levels and the number of low produce supply stores.  It appeared that higher poverty areas could be more likely to have a greater number of low produce supply stores (i.e. corner stores, gas stations).  
 
 <p align="center">
-    <img src="images/scatter_tot_lpss.jpeg" width='450'/>
+    <img src="images/scatter_tot_lpss.jpeg" width='500'/>
 </p>
 
 
@@ -64,7 +64,7 @@ In further exploration, I thought that total LPSS might follow a Poisson distrib
    
 
 <p align="center">
-    <img src="images/poisson_cdfs.jpeg" width='450'/>
+    <img src="images/poisson_cdfs.jpeg" width='550'/>
 </p>
 
 **Potential Explanations**
@@ -95,7 +95,7 @@ Methodology: Comparison of Means
 **Conclusion**: Vehicle availability appears to be **higher** in areas **without supermarket access**.  We are 95% confident that the difference in mean vehicle availability is between 2.51% and 7.85%. 
 
 <p align="center">
-    <img src="images/Veh_avail_supermarkets_compare_means.jpeg" width='450'/>
+    <img src="images/Veh_avail_supermarkets_compare_means.jpeg" width='550'/>
 </p>
 
 ---
@@ -117,11 +117,11 @@ Methodology: Comparison of Medians
 * Relied on boostrapping in order to create a normal distribution of the differences in medians (high poverty - not high poverty)
 * Calculated the 95% confidence interval for the difference in medians using the 2.5 and 97.5 percentiles of the distribution of the median differences
 
-**Conclusion:** Areas with **poverty levels above 20%** appear to have a **lower percentage of HPSS stores** than areas with poverty levels above 20%.  We are 95% confident that the percentage of HPSS in high poverty areas is between 3.64% and XX 6.35% lower than non-high poverty areas. 
+**Conclusion:** Areas with **poverty levels above 20%** appear to have a **lower percentage of HPSS stores** than areas with poverty levels above 20%.  We are 95% confident that the percentage of HPSS in high poverty areas is between 3.64% and 6.35% lower than non-high poverty areas. 
 
 
 <p align="center">
-    <img src="images/Percent_HPSS_compare_medians.jpeg" width='450'/>
+    <img src="images/Percent_HPSS_compare_medians.jpeg" width='550'/>
 </p>
 
 
@@ -204,8 +204,8 @@ Not High Poverty| 14.87 |  12.5 | 11.53 | 584|
     
     > The the size of each boostrap sample was equal to the number of samples within each group and were chosen at random and with replacement
 
-    >Calculated the median of each bootstrap sample and then the difference in means between each group
+    >Calculated the median of each bootstrap sample and then the difference in medians between each group
 
-    >Calculated 95% confidence intervals as the 2.5 and 97.5 percentiles of the mean differences
+    >Calculated 95% confidence intervals as the 2.5 and 97.5 percentiles of the median differences
     
   
