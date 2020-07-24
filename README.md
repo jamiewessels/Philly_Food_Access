@@ -68,13 +68,7 @@ It's likely that our Block Groups are not independent and identically distribute
 
 ![Heat Map Philadelphia - Total LPSS](images/tot_lpss_hmap_philly.png)
 
-**Other Visualizations**
 
-My initial exploration also included visualizing relationships between the quantitative attributes within the dataset.  The plot below shows the interesting relationship between percent HPSS and percent poverty; there appears to be a weak negative relationship between the two quantities.  This will be further explored in Analysis #2. 
-
-<p align="center">
-    <img src="images/scatter_pct_hpss_by_pov.jpeg" width='450'/>
-</p>
 
 ---
 
