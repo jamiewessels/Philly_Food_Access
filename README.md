@@ -42,6 +42,11 @@ There were 13 null values within the raw dataset, 11 of which corresponded to th
 
 ### **Initial Exploration: Total Low Produce Supply Stores (LPSS)**
 
+<p align="center">
+    <img src="images/scatter_matrix.jpeg" width='550'/>
+</p>
+
+
 When exploring the data, I quickly became interested in the relationship between poverty levels and the number of low produce supply stores.  It appeared that higher poverty areas could be more likely to have a greater number of low produce supply stores (i.e. corner stores, gas stations).  
 
 <p align="center">
