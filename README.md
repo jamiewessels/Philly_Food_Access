@@ -42,12 +42,8 @@ There were 13 null values within the raw dataset, 11 of which corresponded to th
 
 ### **Initial Exploration: Total Low Produce Supply Stores (LPSS)**
 
-<p align="center">
-    <img src="images/scatter_matrix.jpeg" width='550'/>
-</p>
 
-
-When exploring the data, I quickly became interested in the relationship between poverty levels and the number of low produce supply stores.  It appeared that higher poverty areas could be more likely to have a greater number of low produce supply stores (i.e. corner stores, gas stations).  
+I quickly became interested in the relationship between poverty classification and the number of low produce supply stores. Block Groups were coded "High Poverty" or "Not High Poverty" based on a 20% threshold. It appeared that higher poverty areas could be more likely to have a greater number of low produce supply stores.
 
 <p align="center">
     <img src="images/pdf_tot_lpss_by_poverty.jpeg" width='450'/>
@@ -72,6 +68,14 @@ It's likely that our Block Groups are not independent and identically distribute
 
 ![Heat Map Philadelphia - Total LPSS](images/tot_lpss_hmap_philly.png)
 
+**Other Visualizations**
+
+My initial exploration also included visualizing relationships between the quantitative attributes within the dataset.  The plot below shows the interesting relationship between percent HPSS and percent poverty; there appears to be a weak negative relationship between the two quantities.  This will be further explored in Analysis #2. 
+
+<p align="center">
+    <img src="images/scatter_pct_hpss_by_pov.jpeg" width='450'/>
+</p>
+
 ---
 
 ### **Analysis 1:** Supermarket Access and Vehicle Availability
@@ -81,6 +85,7 @@ The dataset was split into two categories: Supermarket Access and No Supermarket
 <p align="center">
     <img src="images/pdfandcdf_pct_vehicle_by_supermarket.jpeg" width='450'/>
 </p>
+
 
 **Investigation:** Is there a difference in the mean vehicle availability for areas with supermarket access and areas without supermarket access?
 
