@@ -98,7 +98,7 @@ Methodology: Comparison of Means
 
 ---
 
-### **Analysis 2:** Poverty Levels and Food Access
+### **Analysis 2:** Poverty Levels and Percent HPSS
 
 The original dataset was split into two categories: High Poverty and Not High Poverty.  High Poverty areas are those in which greater than 20% of residents fall below the Federal Poverty Line. The figures below show the distributions of percent HPSS and the associated cumulative densities for each poverty classification. The differences in their CDFs indicate that not only might there be a difference in mean % HPSS between the two groups, but there could also be a difference in the shape of their distributions. 
 
@@ -115,7 +115,7 @@ Methodology: Comparison of Medians
 * Relied on boostrapping in order to create a normal distribution of the differences in medians (high poverty - not high poverty)
 * Calculated the 95% confidence interval for the difference in medians using the 2.5 and 97.5 percentiles of the distribution of the median differences
 
-**Conclusion:** Areas with **poverty levels above 20%** appear to have a **lower percentage of HPSS stores** than areas with poverty levels above 20%.  We are 95% confident that the percentage of HPSS in high poverty areas is between 3.64% and 6.35% lower than non-high poverty areas. 
+**Conclusion:** Areas with **poverty levels above 20%** appear to have a **lower percentage of HPSS stores** than areas with poverty levels below 20%.  We are 95% confident that the percentage of HPSS in high poverty areas is between 3.64% and 6.35% lower than non-high poverty areas. 
 
 
 <p align="center">
