@@ -1,6 +1,6 @@
 # Philly Neighborhood Food Access Exploration
 
-<p align="center">
+<p align="left">
     <img src="images/food_philly.jpeg" width='450'/>
 </p>
 
