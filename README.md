@@ -1,7 +1,7 @@
 # Philly Neighborhood Food Access Exploration
 
 <p align="left">
-    <img src="images/food_philly.jpeg" width='450'/>
+    <img src="images/philly_food.jpeg" width='450'/>
 </p>
 
 This project will explore whether there are any relationships between food access in Philadelphia and socioeconomic factors such as poverty level and vehicle availability. The dataset used in this evaluation comes from OpenDataPhilly.org.
