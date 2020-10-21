@@ -1,7 +1,7 @@
 # Philly Neighborhood Food Access Exploration
 
 <p align="left">
-    <img src="images/philly_food.jpeg" width='450'/>
+    <img src="images/philly_food.jpeg" width='350'/>
 </p>
 
 This project will explore whether there are any relationships between food access in Philadelphia and socioeconomic factors such as poverty level and vehicle availability. The dataset used in this evaluation comes from OpenDataPhilly.org.
@@ -50,7 +50,7 @@ There were 13 null values within the raw dataset, 11 of which corresponded to th
 I quickly became interested in the relationship between poverty classification and the number of low produce supply stores. Block Groups were coded "High Poverty" or "Not High Poverty" based on a 20% threshold. It appeared that higher poverty areas could be more likely to have a greater number of low produce supply stores.
 
 <p align="center">
-    <img src="images/pdf_tot_lpss_by_poverty.jpeg" width='450'/>
+    <img src="images/pdf_tot_lpss_by_poverty.jpeg" width='700'/>
 </p>
 
 
@@ -63,7 +63,7 @@ In further exploration, I thought that total LPSS might follow a Poisson distrib
    
 
 <p align="center">
-    <img src="images/poisson_cdfs.jpeg" width='550'/>
+    <img src="images/poisson_cdfs.jpeg" width='700'/>
 </p>
 
 **Potential Explanations**
@@ -81,7 +81,7 @@ It's likely that our Block Groups are not independent and identically distribute
 The dataset was split into two categories: Supermarket Access and No Supermarket Access.  "Supermarket Access" means that there is a supermarket within 0.5 miles of the Block Group's geolocation.  The figures below show distributions for vehicle availability and their observed cumulative densities (CDFs) based on supermarket access. The differences in their CDFs indicate that there may be a difference in vehicle availability between the two groups. 
 
 <p align="center">
-    <img src="images/pdfandcdf_pct_vehicle_by_supermarket.jpeg" width='450'/>
+    <img src="images/pdfandcdf_pct_vehicle_by_supermarket.jpeg" width='700'/>
 </p>
 
 
@@ -97,7 +97,7 @@ Methodology: Comparison of Means
 **Conclusion**: Vehicle availability appears to be **higher** in areas **without supermarket access**.  We are 95% confident that the difference in mean vehicle availability is between 2.51% and 7.85%. 
 
 <p align="center">
-    <img src="images/Veh_avail_supermarkets_compare_means.jpeg" width='550'/>
+    <img src="images/Veh_avail_supermarkets_compare_means.jpeg" width='700'/>
 </p>
 
 ---
@@ -107,7 +107,7 @@ Methodology: Comparison of Means
 The original dataset was split into two categories: High Poverty and Not High Poverty.  High Poverty areas are those in which greater than 20% of residents fall below the Federal Poverty Line. The figures below show the distributions of percent HPSS and the associated cumulative densities for each poverty classification. The differences in their CDFs indicate that not only might there be a difference in mean % HPSS between the two groups, but there could also be a difference in the shape of their distributions. 
 
 <p align="center">
-    <img src="images/pdfandcdf_pct_HPSS_by_poverty.jpeg" width='450'/>
+    <img src="images/pdfandcdf_pct_HPSS_by_poverty.jpeg" width='700'/>
 </p>
 
 
@@ -123,7 +123,7 @@ Methodology: Comparison of Medians
 
 
 <p align="center">
-    <img src="images/Percent_HPSS_compare_medians.jpeg" width='550'/>
+    <img src="images/Percent_HPSS_compare_medians.jpeg" width='700'/>
 </p>
 
 
